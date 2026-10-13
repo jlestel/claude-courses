@@ -24,6 +24,9 @@ cookies. Un navigateur headless se fait bloquer par l'anti-bot du site.
 2. Vérifie que le magasin affiché = `leclerc.magasin`. Sinon, signale-le.
 3. Liste demandée = `habituels` du profil, puis applique l'ordre reçu
    (« sans le lait », « + 2 pizzas », « double les yaourts »…).
+   Saute les lignes dont `saison` ne correspond pas au mois courant (`ete` = juin-septembre,
+   `hiver` = décembre-février…) sauf si l'ordre les demande ; liste-les dans le récap.
+   `poids_kg` donne le poids habituel d'un produit en vrac.
 4. Pour chaque ligne :
    - si `leclerc.url` existe, ouvre la fiche produit ; sinon cherche `leclerc.libelle` ou `nom` ;
    - indisponible -> règle `remplacement` (`aucun` | `meme-marque` | `moins-cher`) ;

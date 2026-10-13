@@ -15,6 +15,11 @@ description: Configurer le profil (enseigne, magasin, habituels) et le pont Herm
    les quantités, puis écris-les dans `habituels` sous la clé de l'enseigne
    (`leclerc: {libelle, url}` ou `intermarche: {libelle, url}`). Si un produit
    existe déjà dans `habituels` (même nom), complète-le au lieu de le dupliquer.
+   Si les factures/commandes passées sont accessibles (Intermarché : « Mes achats », icône
+   de téléchargement de chaque commande, PDF lisible dans l'onglet), compte la fréquence
+   d'achat de chaque produit et propose ceux achetés dans au moins ~1/4 des commandes,
+   avec la quantité la plus fréquente (`frequence: "n/N"`). Étiquette `saison` les
+   produits achetés uniquement sur une saison.
    Ne saisis jamais d'identifiants : si je ne suis pas connecté, demande-moi de le faire.
 4. Pont Hermes : si `~/.claude-courses/bridge.json` n'existe pas, lance
    `node ${CLAUDE_PLUGIN_ROOT}/channel/pair.mjs` et affiche-moi sa sortie

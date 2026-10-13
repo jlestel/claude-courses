@@ -36,6 +36,9 @@ cookies. Un navigateur headless se fait bloquer par l'anti-bot du site.
 3. Si le panier contient déjà des articles, liste-les et demande quoi faire.
 4. Liste demandée = `habituels` du profil, puis applique l'ordre reçu
    (« sans le lait », « + 2 pizzas », « double les yaourts »…).
+   Saute les lignes dont `saison` ne correspond pas au mois courant (`ete` = juin-septembre,
+   `hiver` = décembre-février…) sauf si l'ordre les demande ; liste-les dans le récap.
+   `poids_kg` donne le poids habituel d'un produit en vrac.
 5. Pour chaque ligne :
    - si `intermarche.url` existe, ouvre la fiche ; sinon cherche `intermarche.libelle` ou `nom` ;
    - indisponible -> règle `remplacement` (`aucun` | `meme-marque` | `moins-cher`) ;

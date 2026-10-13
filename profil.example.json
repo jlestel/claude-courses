@@ -5,9 +5,12 @@
   "habituels": [
     { "nom": "Lait demi-écrémé 1L", "quantite": 6, "remplacement": "meme-marque",
       "leclerc": { "libelle": "Lait demi-écrémé UHT Lactel 1L", "url": null },
+      "frequence": "4/11",
       "intermarche": { "libelle": "Lait UHT demi-écrémé Les Éleveurs vous disent Merci 6x1L",
                        "url": "https://www.intermarche.com/produit/lait-uht-demi-ecreme/3250393310553" } },
     { "nom": "Café moulu 250g", "quantite": 2, "remplacement": "moins-cher",
-      "leclerc": { "libelle": null, "url": null } }
+      "leclerc": { "libelle": null, "url": null } },
+    { "nom": "Melon charentais", "quantite": 1, "remplacement": "aucun", "saison": "ete",
+      "intermarche": { "libelle": "Melon CHARENTAIS, la pièce", "url": null } }
   ]
 }
