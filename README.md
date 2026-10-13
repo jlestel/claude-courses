@@ -4,8 +4,10 @@ Plugin Claude Code pour faire ses courses en drive **dans son propre Chrome**
 (Claude in Chrome), avec ses produits habituels par défaut, pilotable à distance
 depuis un agent (Hermes) via un *channel* Claude Code.
 
-- v0.1 : **Leclerc Drive** uniquement, s'arrête au panier rempli (jamais de paiement).
-- v0.2 : Intermarché Drive + comparaison des paniers (prix au kilo, total, panier split).
+- v0.1 : **Leclerc Drive**, s'arrête au panier rempli (jamais de paiement).
+- v0.2 : **Intermarché Drive** (skill `intermarche-drive`, habituels importés depuis
+  « Mes produits habituels »), enseigne par défaut dans le profil.
+- v0.3 : comparaison des paniers (prix au kilo, total, panier split).
 
 ## Pourquoi le navigateur de l'utilisateur
 
@@ -28,12 +30,15 @@ d'où le flag de dev, à confirmer au démarrage) :
 claude --chrome --dangerously-load-development-channels plugin:courses@jlestel
 ```
 
-Utilisation locale : `/courses:courses sans le lait, +2 pizzas`.
+Utilisation locale : `/courses:courses sans le lait, +2 pizzas` (enseigne par défaut
+du profil) ou `/courses:courses intermarche sans le lait`.
+
+Développement local du plugin : `claude --chrome --plugin-dir ~/claude-courses`.
 
 ## Pilotage depuis Hermes
 
 ```
-Hermes --(ntfy topic-in, HMAC)--> channel/server.mjs --<channel>--> Claude Code --Chrome--> leclercdrive.fr
+Hermes --(ntfy topic-in, HMAC)--> channel/server.mjs --<channel>--> Claude Code --Chrome--> leclercdrive.fr / intermarche.com
 Hermes <--(ntfy topic-out, HMAC)-- outil reply <-------------------------'
 ```
 
