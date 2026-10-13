@@ -16,6 +16,18 @@ cookies. Un navigateur headless se fait bloquer par l'anti-bot du site.
   - `habituels` : liste `{nom, quantite, leclerc: {url?, libelle?}, remplacement}`.
 - Historique : `~/.claude-courses/paniers/AAAA-MM-JJ-leclerc.json`, écrit à chaque run.
 
+## Repères du site
+
+- L'accueil leclercdrive.fr ne montre pas le magasin : « Mon drive <ville> » puis
+  « Commencer mes courses » mène au site du magasin
+  (`https://fdN-courses.leclercdrive.fr/magasin-<id>-<id>-<Ville>.aspx`, à garder dans `leclerc.site`).
+- Produits habituels : `<site magasin>/produits-habituels.aspx`. Les produits ne sont pas
+  des liens dans le DOM : ils sont dans un JSON d'un `<script>` (`iIdProduit`,
+  `sLibelleLigne1/2`, `sPrixUnitaire`, `sUrlPageProduit`).
+- Commandes : `https://fdN-espace-client.leclercdrive.fr/drive/magasin-<id>-<id>-<Ville>/mes-commandes.aspx`
+  (filtre par année `?AnneeSelectionnee=AAAA`).
+- « Accéder à Mon compte » (`aiguillage.aspx`) peut rester blanc : passer par le site du magasin.
+
 ## Déroulé
 
 1. Ouvre https://www.leclercdrive.fr/ dans un nouvel onglet. Si l'utilisateur
