@@ -27,6 +27,21 @@ cookies. Un navigateur headless se fait bloquer par l'anti-bot du site.
 - Commandes : `https://fdN-espace-client.leclercdrive.fr/drive/magasin-<id>-<id>-<Ville>/mes-commandes.aspx`
   (filtre par année `?AnneeSelectionnee=AAAA`).
 - « Accéder à Mon compte » (`aiguillage.aspx`) peut rester blanc : passer par le site du magasin.
+- Fiche produit : `<site magasin>/fiche-produits-<iIdProduit>-<slug>.aspx` ; le slug est libre
+  (n'importe quel texte), seul l'id compte.
+- Recherche : `<site magasin>/recherche.aspx?TexteRecherche=<texte>` ; résultats dans le même
+  JSON embarqué que les habituels. Si la recherche ne trouve rien, le site renvoie les
+  habituels : vérifier que les libellés correspondent.
+- Ajout au panier sur une fiche : `click()` JS sur l'élément visible `#sLibellePictoAjouterProduit`
+  (les autres liens « Ajout produit au panier » ne réagissent pas au clic JS). Quantité :
+  `#js_bloc_plus_un_moins_un a[href="#plus"]` visible, un clic par unité, ~1,5 s entre deux.
+  Le bloc affiche alors `- n +`.
+- Rupture : popup « Stock - Produit bientôt disponible » et rien n'est ajouté. Le stock dépend
+  de la date de retrait (bandeau « Un ou plusieurs produits… ne sont pas disponibles pour un
+  retrait à cette date ») : signaler qu'un créneau plus tardif peut lever des ruptures.
+- Fiche sans `h1` ni bouton : produit déréférencé, à traiter comme introuvable.
+- Contrôle final : liste du panier latéral `#ulWCRS319_Produits` (une ligne par produit) et
+  « Total à payer » du panneau.
 
 ## Déroulé
 
