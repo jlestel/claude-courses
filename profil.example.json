@@ -1,0 +1,10 @@
+{
+  "leclerc": { "magasin": "Leclerc Drive <ville>" },
+  "intermarche": { "magasin": null },
+  "habituels": [
+    { "nom": "Lait demi-écrémé 1L", "quantite": 6, "remplacement": "meme-marque",
+      "leclerc": { "libelle": "Lait demi-écrémé UHT Lactel 1L", "url": null } },
+    { "nom": "Café moulu 250g", "quantite": 2, "remplacement": "moins-cher",
+      "leclerc": { "libelle": null, "url": null } }
+  ]
+}

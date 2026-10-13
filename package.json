@@ -1,0 +1,6 @@
+{
+  "name": "claude-courses",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node test/e2e.mjs" }
+}

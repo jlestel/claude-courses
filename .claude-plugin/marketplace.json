@@ -1,0 +1,7 @@
+{
+  "name": "jlestel",
+  "owner": { "name": "Julien Lestel" },
+  "plugins": [
+    { "name": "courses", "source": "./", "description": "Courses drive Leclerc/Intermarché pilotées depuis Hermes." }
+  ]
+}

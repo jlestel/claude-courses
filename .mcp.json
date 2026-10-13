@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "courses": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/channel/server.mjs"]
+    }
+  }
+}
