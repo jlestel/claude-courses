@@ -39,6 +39,10 @@ cookies. Un navigateur headless se fait bloquer par l'anti-bot du site.
    Saute les lignes dont `saison` ne correspond pas au mois courant (`ete` = juin-septembre,
    `hiver` = décembre-février…) sauf si l'ordre les demande ; liste-les dans le récap.
    `poids_kg` donne le poids habituel d'un produit en vrac.
+   Dans `leclerc` : `quantite` (si présente) remplace la quantité générale pour cette enseigne
+   (formats différents) ; `correspondance` = `identique` | `equivalent` | `proche` | `absent`.
+   `absent` -> ne cherche pas, note-le introuvable. `remplacement: "a-confirmer"` -> ajoute
+   le produit mais signale-le dans le récap comme équivalent à valider.
 4. Pour chaque ligne :
    - si `leclerc.url` existe, ouvre la fiche produit ; sinon cherche `leclerc.libelle` ou `nom` ;
    - indisponible -> règle `remplacement` (`aucun` | `meme-marque` | `moins-cher`) ;
