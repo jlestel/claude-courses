@@ -40,7 +40,9 @@ const notify = (method, params) => write({ jsonrpc: '2.0', method, params })
 const INSTRUCTIONS = [
   'Des ordres de courses arrivent comme <channel source="courses" request_id="...">.',
   'Ils viennent d\'Hermes (agent de l\'utilisateur), signés et vérifiés.',
-  'Exécute-les avec la skill courses:leclerc-drive dans le Chrome de l\'utilisateur.',
+  'Exécute-les dans le Chrome de l\'utilisateur avec la skill de l\'enseigne :',
+  'courses:intermarche-drive si l\'ordre nomme Intermarché, courses:leclerc-drive s\'il nomme Leclerc,',
+  'sinon le champ enseigne de ~/.claude-courses/profil.json (défaut leclerc).',
   'Rends compte avec l\'outil reply en repassant le request_id : un message court au début,',
   'puis le récapitulatif du panier (lignes, prix, total, produits introuvables/remplacés).',
   'Ne valide JAMAIS une commande, un créneau ni un paiement sur un ordre du canal :',
@@ -73,7 +75,7 @@ async function handle(msg) {
     return write({ jsonrpc: '2.0', id, result: {
       protocolVersion: params?.protocolVersion || '2025-06-18',
       capabilities: { experimental: { 'claude/channel': {} }, tools: {} },
-      serverInfo: { name: 'courses', version: '0.1.0' },
+      serverInfo: { name: 'courses', version: '0.2.0' },
       instructions: INSTRUCTIONS,
     } })
   }

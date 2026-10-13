@@ -1,7 +1,7 @@
 {
   "name": "courses",
-  "version": "0.1.0",
-  "description": "Faire ses courses en drive (Leclerc d'abord) dans le Chrome de l'utilisateur, avec ses produits habituels, pilotable à distance depuis Hermes.",
+  "version": "0.2.0",
+  "description": "Faire ses courses en drive (Leclerc, Intermarché) dans le Chrome de l'utilisateur, avec ses produits habituels, pilotable à distance depuis Hermes.",
   "author": { "name": "Julien Lestel", "url": "https://github.com/jlestel" },
   "repository": "https://github.com/jlestel/claude-courses",
   "license": "MIT",
