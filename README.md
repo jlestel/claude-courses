@@ -4,6 +4,10 @@ Plugin Claude Code pour faire ses courses en drive **dans son propre Chrome**
 (Claude in Chrome), avec ses produits habituels par défaut, pilotable à distance
 depuis un agent (Hermes) via un *channel* Claude Code.
 
+[![Claude remplit en parallèle les drives Intermarché et Leclerc](docs/demo/demo.gif)](https://jlestel.github.io/claude-courses/demo/)
+
+*Démo : 5 produits habituels, deux drives remplis en parallèle, arrêt au panier. [Version interactive](https://jlestel.github.io/claude-courses/demo/).*
+
 - v0.1 : **Leclerc Drive**, s'arrête au panier rempli (jamais de paiement).
 - v0.2 : **Intermarché Drive** (skill `intermarche-drive`, habituels importés depuis
   « Mes produits habituels »), enseigne par défaut dans le profil.
